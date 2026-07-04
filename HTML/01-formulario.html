@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f0f2f5; padding: 20px; }
+        .container { background: white; max-width: 500px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        h1 { text-align: center; border-bottom: 2px solid #333; padding-bottom: 10px; }
+        .campo { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        input[type="text"], input[type="email"], input[type="number"], select, textarea {
+            width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;
+        }
+        .opcoes { margin-top: 5px; }
+        .opcoes label { display: block; font-weight: normal; }
+        button { width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>FORMULÁRIO</h1>
+
+    <form action="processa.php" method="POST">
+        
+        <div class="campo">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+        </div>
+
+        <div class="campo">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="campo">
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade" min="0">
+        </div>
+
+        <div class="campo">
+            <label>Sexo:</label>
+            <div class="opcoes">
+                <label><input type="radio" name="sexo" value="Masculino"> Masculino</label>
+                <label><input type="radio" name="sexo" value="Feminino"> Feminino</label>
+            </div>
+        </div>
+
+        <div class="campo">
+            <label>Linguagens:</label>
+            <div class="opcoes">
+                <label><input type="checkbox" name="linguagens[]" value="HTML"> HTML</label>
+                <label><input type="checkbox" name="linguagens[]" value="CSS"> CSS</label>
+                <label><input type="checkbox" name="linguagens[]" value="JavaScript"> JavaScript</label>
+            </div>
+        </div>
+
+        <div class="campo">
+            <label for="estado">Estado:</label>
+            <select id="estado" name="estado">
+                <option value="">Selecionar ▼</option>
+                <option value="SP">São Paulo</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="Outros">Outros</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+        </div>
+
+        <button type="submit">ENVIAR</button>
+
+    </form>
+</div>
+
+</body>
+</html>
